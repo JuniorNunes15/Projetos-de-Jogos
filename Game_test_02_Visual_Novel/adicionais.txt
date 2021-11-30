@@ -1,4 +1,5 @@
 Este projeto serve apenas para testar funções e como o jogo roda.
+Jogo testado apenas no Eclipse no Linux Mint, pode ser que dé erro em outras versões.
 A versão teste ainda está incompleta.
 Ainda falta:
     1 - Arrumar o Menu e arrumar algumas opções;
