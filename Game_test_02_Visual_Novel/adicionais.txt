@@ -1,0 +1,7 @@
+Este projeto serve apenas para testar funções e como o jogo roda.
+A versão teste ainda está incompleta.
+Ainda falta:
+    1 - Arrumar o Menu e arrumar algumas opções;
+    2 - Criar o niveis;
+    3 - Criar a arte;
+    4 - Arrumar a história;
