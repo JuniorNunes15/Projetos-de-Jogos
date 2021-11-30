@@ -1,0 +1,2 @@
+Este projeto serve apenas para testar funções e como o jogo roda.
+O projeto foi testado apenas no Eclipse no Windows, então pode gerar imconpatibilidade com outros dispositivos.
