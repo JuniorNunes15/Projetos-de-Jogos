@@ -157,7 +157,7 @@ public class Menu extends Object {
 		g.fillRect(0, 0, Game_Main.WIDTH * Game_Main.SCALE, Game_Main.HEIGHT * Game_Main.SCALE);
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("arial", Font.BOLD, 36));
-		g.drawImage(Entities.INTRO, 0, 0, Game_Main.WIDTH, Game_Main.HEIGHT, null);
+		//g.drawImage(Entities.INTRO, 0, 0, Game_Main.WIDTH, Game_Main.HEIGHT, null);
 		if(!configuration) {
 			g.drawString("Um clone qualquer!", (Game_Main.WIDTH * Game_Main.SCALE) / 2 - 200, (Game_Main.HEIGHT * Game_Main.SCALE) / 2 - 150);
 			g.setFont(new Font("arial", Font.BOLD, 30));

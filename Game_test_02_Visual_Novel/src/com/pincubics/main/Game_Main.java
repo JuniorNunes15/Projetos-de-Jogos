@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 
 import com.pincubics.entities.Entities;
 import com.pincubics.graphics.Spritesheet;
+import com.pincubics.levels.Main_Level;
 import com.pincubics.world.*;
 
 
@@ -122,12 +123,13 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 			time++;
 			//render();
 			if(time >= maxTime) {
-				gameState = "NORMAL";
+				gameState = "MENU";
 			}
 		}
 		else if(gameState == "NORMAL") {
+			Main_Level.tick();
 			System.out.println("in normal state");
-			gameState = "MENU";
+			//gameState = "MENU";
 		}
 		else if(gameState == "FINAL") {
 			System.out.println("look this tick");
@@ -225,6 +227,10 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 		if(gameState == "MENU") {
 			//System.out.println("MENUUUUU");
 			Menu.render(g);
+		}
+		
+		if(gameState == "NORMAL") {
+			Main_Level.render(g);
 		}
 		
 		//fazer rotacao de objetos com o mouse
