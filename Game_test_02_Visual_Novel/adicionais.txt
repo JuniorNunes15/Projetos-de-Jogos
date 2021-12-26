@@ -6,3 +6,5 @@ Ainda falta:
     2 - Criar o niveis;
     3 - Criar a arte;
     4 - Arrumar a história;
+
+adicionado uma tela principal que vai mandar para os niveis(imcompleta)
