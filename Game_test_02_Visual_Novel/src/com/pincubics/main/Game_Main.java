@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 
 import com.pincubics.entities.Entities;
 import com.pincubics.graphics.Spritesheet;
+import com.pincubics.levels.Level_0;
 import com.pincubics.levels.Main_Level;
 import com.pincubics.world.*;
 
@@ -128,8 +129,12 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 		}
 		else if(gameState == "NORMAL") {
 			Main_Level.tick();
-			System.out.println("in normal state");
+			//System.out.println("in normal state");
 			//gameState = "MENU";
+		}
+		else if(gameState == "Level1") {
+			Level_0.tick();
+			Level_0.InLevel = true;
 		}
 		else if(gameState == "FINAL") {
 			System.out.println("look this tick");
@@ -229,10 +234,15 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 			Menu.render(g);
 		}
 		
+		/*the games states of normal game and levels*/
 		if(gameState == "NORMAL") {
 			Main_Level.render(g);
 		}
+		if(gameState == "Level1") {
+			Level_0.render(g);
+		}
 		
+		/*********************************************/
 		//fazer rotacao de objetos com o mouse
 		/*
 		Graphics2D g2 = (Graphics2D) g;
@@ -390,10 +400,11 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 			}
 		}
 		if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-			//System.out.println("WWWWW");
-			//player.up = true;
 			if(Game_Main.getGameState() == "MENU") {
 				Menu.setEnter(true);
+			}
+			if(Game_Main.getGameState() == "NORMAL") {
+				Main_Level.setPressToContinue(true);
 			}
 		}
 	}

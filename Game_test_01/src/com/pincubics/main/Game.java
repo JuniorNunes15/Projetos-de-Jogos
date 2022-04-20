@@ -370,7 +370,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 			g2.setFont(new Font("arial", Font.BOLD, 20));
 			g2.drawString("GAME OVER",  (WIDTH * SCALE) / 2 - 40, (HEIGHT * SCALE) / 2);
 			if(showMessageameOver) {
-				g2.drawString("[Pressione espaço para continuar]",  (WIDTH * SCALE) / 2 - 130, (HEIGHT * SCALE) / 2 + 50);
+				g2.drawString("[Pressione espaï¿½o para continuar]",  (WIDTH * SCALE) / 2 - 130, (HEIGHT * SCALE) / 2 + 50);
 			}
 		}
 		else if(gameState == "FINAL") {
@@ -381,7 +381,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 			g2.setFont(new Font("arial", Font.BOLD, 20));
 			g2.drawString("CONGRATULATIONS!!",  (WIDTH * SCALE) / 2 - 80, (HEIGHT * SCALE) / 2);
 			if(showMessageFinal) {
-				g2.drawString("[Pressione espaço para voltar ao menu]",  (WIDTH * SCALE) / 2 - 170, (HEIGHT * SCALE) / 2 + 50);
+				g2.drawString("[Pressione espaï¿½o para voltar ao menu]",  (WIDTH * SCALE) / 2 - 170, (HEIGHT * SCALE) / 2 + 50);
 			}
 		}
 		
