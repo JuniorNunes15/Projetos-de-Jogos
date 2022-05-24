@@ -10,9 +10,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
 import javax.swing.JFrame;
-
 import com.pincubics.entities.Entities;
 import com.pincubics.graphics.Spritesheet;
 import com.pincubics.levels.Level_0;
@@ -43,8 +41,10 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 	private BufferedImage image;
 	
 	public static int currentSize = 0;
+	public static boolean cz = false;
 	
 	public static Spritesheet introSprite;
+	public static Spritesheet personagem, personagem2;
 	
 	private static int time = 0;
 	private static int maxTime = 60*3; //levando 3 segundos para entrar no jogo
@@ -56,17 +56,21 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 		addMouseListener(this);
 		addMouseMotionListener(this);
 		
-		//if(currentSize == 0) {
-		setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
-		/*}
+		if(currentSize == 0) {
+			setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
+		}
 		else {
 			setPreferredSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize())); //colocar a janela em fullscream
-		}*/
+		}
 		//
 		
 		introSprite = new Spritesheet("/intro2.png");
+		personagem = new Spritesheet("/sora.png");
+		personagem2 = new Spritesheet("/sora2.png");
 		
 		initFrame();
+		
+		
 		image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	}
 	
@@ -75,12 +79,14 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 	public void initFrame() {
 		frame = new JFrame("Game 1");
 		frame.add(this);
-		/*if(currentSize == 1) { //colocar em tela cheia*/
-			//frame.setUndecorated(true);
-		/*}
+		if(currentSize == 1) { //colocar em tela cheia*/
+			setPreferredSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize())); 
+			frame.setUndecorated(true);
+		}
 		else {
+			setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
 			frame.setUndecorated(false);
-		}*/
+		}
 		frame.setResizable(false);
 		frame.pack();
 		/* trocando o currsor do mouse e da icone do jogo */
@@ -91,7 +97,7 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 		//Cursor c = toolkit.createCustomCursor(image, new Point(0, 0), "img");
 		//frame.setCursor(c); //implementando cusor do mouse
 		//frame.setIconImage(imagem); //implementando icone do jogo
-		frame.setAlwaysOnTop(true);
+		//frame.setAlwaysOnTop(true);
 		/**/
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,10 +138,10 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 			//System.out.println("in normal state");
 			//gameState = "MENU";
 		}
-		else if(gameState == "Level1") {
+		/*else if(gameState == "Level1") {
 			Level_0.tick();
 			Level_0.InLevel = true;
-		}
+		}*/
 		else if(gameState == "FINAL") {
 			System.out.println("look this tick");
 		}

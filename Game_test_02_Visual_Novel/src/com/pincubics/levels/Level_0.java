@@ -11,10 +11,11 @@ public class Level_0 extends Main_Level{
 	
 	//public static String[] talks = new String[5];
 	//talks = "";
-	public static String[] talks2 = {"essa não",
-									"oque foi?",
-									"a bola que estava na estante sumiu",
-									"estranho, tinha visto ela hoje de manhã"};
+	public static String[] talks = {"Já era noite!",
+									"O único som que se dava pra escultar era o do vento e a da minha pesada respiração!",
+									"Não tinha mais forças para me movimentar,",
+									"a única coisa que podia fazer, era esperar pela minha morte!",
+									};
 	
 	public static void tick() {
 		/*if(InLevel) {

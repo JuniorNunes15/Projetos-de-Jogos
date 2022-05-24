@@ -132,11 +132,14 @@ public class Menu extends Object {
 				else if(size) {
 					if(sizeConfig[currentSize] == "960x640") {
 						Game_Main.currentSize = 0;
+						Game_Main.cz = true;
 						System.out.println("janela!");
 					}
 					else if(sizeConfig[currentSize] == "fullscream") {
 						System.out.println("tela cheia!");
 						Game_Main.currentSize = 1;
+						Game_Main.cz = true;
+						//Game_Main.initFrame();
 					}
 					else {
 						size = false;
@@ -159,7 +162,7 @@ public class Menu extends Object {
 		g.setFont(new Font("arial", Font.BOLD, 36));
 		//g.drawImage(Entities.INTRO, 0, 0, Game_Main.WIDTH, Game_Main.HEIGHT, null);
 		if(!configuration) {
-			g.drawString("Um clone qualquer!", (Game_Main.WIDTH * Game_Main.SCALE) / 2 - 200, (Game_Main.HEIGHT * Game_Main.SCALE) / 2 - 150);
+			g.drawString("DIARIO DE UM AVENTUREIRO", (Game_Main.WIDTH * Game_Main.SCALE) / 2 - 280, (Game_Main.HEIGHT * Game_Main.SCALE) / 2 - 150);
 			g.setFont(new Font("arial", Font.BOLD, 30));
 			if(pause == false) {
 				g.drawString("Novo jogo", (Game_Main.WIDTH * Game_Main.SCALE) / 2 - 80, (Game_Main.HEIGHT * Game_Main.SCALE) / 2 - 80);

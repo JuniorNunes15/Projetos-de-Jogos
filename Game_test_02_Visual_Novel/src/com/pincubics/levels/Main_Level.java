@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.io.*;
 
+import com.pincubics.entities.Entities;
 import com.pincubics.main.Game_Main;
 
 public class Main_Level {
@@ -21,12 +22,14 @@ public class Main_Level {
 	
 	public static boolean showMessage = false;
 	
-	try {
+	private static String[] Levels = {"Prologo", "capitulo 1", "capitulo 2"};
+	
+	/*try {
 		FileReader file = new FileReader(text);
 	}
 	catch(IOException e){
 		
-	}
+	}*/
 	
 	public static void tick() {
 		
@@ -62,13 +65,45 @@ public class Main_Level {
 	public static void render(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Game_Main.WIDTH * Game_Main.SCALE, Game_Main.HEIGHT * Game_Main.SCALE);
+		g.setFont(new Font("arial", Font.BOLD, 20));
+		g.setColor(Color.BLUE);
+		g.drawString(Levels[actualLevel], 40, 90);
+		
 		if(actualLevel == 0) {
-			if(talkLine < Level_0.talks2.length){
-				talkBalon(g, Level_0.talks2[talkLine]);
+			if(talkLine < Level_0.talks.length){
+				shownSprites(g, "-111");
+				talkBalon(g, Level_0.talks[talkLine]);
+			}
+			else {
+				actualLevel++;
+				talkLine = 0;
+			}
+		}
+		//talkBalon(g, Levels[actualLevel]);
+		if(actualLevel == 1) {
+			if(talkLine < Level_1.talks.length){
+				shownSprites(g, "+111");
+				talkBalon(g, Level_1.talks[talkLine]);
+			}
+			else {
+				actualLevel++;
+				talkLine = 0;
+			}
+		}
+		if(actualLevel == 2) {
+			if(talkLine < 1) {
+				shownSprites(g, "/111");
+				g.setColor(Color.RED);
+				g.drawString("DIARIO DE UM AVENTUREIRO", 300, 300);
 			}
 			else {
 				actualLevel++;
 			}
+		}
+		//talkBalon(g, Levels[actualLevel]);
+		if(actualLevel == 3) {
+			actualLevel = 0;
+			Game_Main.setGameState("MENU");
 		}
 		
 		//if(Level_0.InLevel) {
@@ -88,9 +123,21 @@ public class Main_Level {
 		g.setColor(Color.BLACK);
 		g.drawString(talk, 40, 490);
 		//System.out.println(curIndex);
-		g.drawString(text.substring(0, curIndex), 40, 510);
+		//g.drawString(text.substring(0, curIndex), 40, 510); fala com animação
 		//showMessage = false;
-		System.out.println(text);
+		//System.out.println(text);
+	}
+	
+	public static void shownSprites(Graphics g, String sprites) { //sprite possi quatro numeros "xxxx" 
+		if(sprites.contains("-")) { //esquerda
+			g.drawImage(Entities.PERSONAGEM, 10, 10, Game_Main.WIDTH -300, Game_Main.HEIGHT, null);
+		}
+		if(sprites.contains("+")) { //direita
+			g.drawImage(Entities.PERSONAGEM2 , 300, 10, Game_Main.WIDTH -300, Game_Main.HEIGHT, null);
+		}
+		if(sprites.contains("/")) { //centro
+			g.drawImage(Entities.PERSONAGEM2 , 100, 10, Game_Main.WIDTH -300, Game_Main.HEIGHT, null);
+		}
 	}
 
 	public static boolean isPressToContinue() {

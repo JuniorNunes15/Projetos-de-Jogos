@@ -9,6 +9,8 @@ import com.pincubics.main.Game_Main;
 public class Entities {
 	
 	public static BufferedImage INTRO = Game_Main.introSprite.getSprite(0, 0, 960, 640);
+	public static BufferedImage PERSONAGEM = Game_Main.personagem.getSprite(0, 0, 368, 640);
+	public static BufferedImage PERSONAGEM2 = Game_Main.personagem2.getSprite(0, 0, 368, 640);
 	
 
 	protected double x;
