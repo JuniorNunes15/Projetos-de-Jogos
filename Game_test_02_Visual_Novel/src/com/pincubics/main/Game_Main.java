@@ -45,6 +45,7 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 	
 	public static Spritesheet introSprite;
 	public static Spritesheet personagem, personagem2;
+	public static Spritesheet cenario1, cenario2;
 	
 	private static int time = 0;
 	private static int maxTime = 60*3; //levando 3 segundos para entrar no jogo
@@ -67,6 +68,8 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 		introSprite = new Spritesheet("/intro2.png");
 		personagem = new Spritesheet("/sora.png");
 		personagem2 = new Spritesheet("/sora2.png");
+		cenario1 = new Spritesheet("/scenary1.jpg");
+		cenario2 = new Spritesheet("/scenary2.jpg");
 		
 		initFrame();
 		
@@ -248,19 +251,6 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 			Level_0.render(g);
 		}
 		
-		/*********************************************/
-		//fazer rotacao de objetos com o mouse
-		/*
-		Graphics2D g2 = (Graphics2D) g;
-		double angleMouse = Math.atan2(200+25 - my,200+25 - mx); //retorna o valor em radianos
-		g2.rotate(angleMouse, 200+25, 200+25);//+25 para ficar no centro do objeto
-		//System.out.println("valor em graus: " + Math.toDegrees(angleMouse)); //pegando a posicao em graus do mause
-		g.setColor(Color.red);
-		g.fillRect(200, 200, 50, 50);
-		*/
-		/*World.renderMiniMap();
-		g.drawImage(miniMap, 470, 310, Game.WIDTH, Game.HEIGHT, null);
-		*/
 		bs.show();
 	}
 	

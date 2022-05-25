@@ -71,7 +71,7 @@ public class Main_Level {
 		
 		if(actualLevel == 0) {
 			if(talkLine < Level_0.talks.length){
-				shownSprites(g, "-111");
+				shownSprites(g, "1-11");
 				talkBalon(g, Level_0.talks[talkLine]);
 			}
 			else {
@@ -82,7 +82,7 @@ public class Main_Level {
 		//talkBalon(g, Levels[actualLevel]);
 		if(actualLevel == 1) {
 			if(talkLine < Level_1.talks.length){
-				shownSprites(g, "+111");
+				shownSprites(g, "1+11");
 				talkBalon(g, Level_1.talks[talkLine]);
 			}
 			else {
@@ -92,7 +92,7 @@ public class Main_Level {
 		}
 		if(actualLevel == 2) {
 			if(talkLine < 1) {
-				shownSprites(g, "/111");
+				shownSprites(g, "0/11");
 				g.setColor(Color.RED);
 				g.drawString("DIARIO DE UM AVENTUREIRO", 300, 300);
 			}
@@ -129,15 +129,21 @@ public class Main_Level {
 	}
 	
 	public static void shownSprites(Graphics g, String sprites) { //sprite possi quatro numeros "xxxx" 
-		if(sprites.contains("-")) { //esquerda
+		//a primeira posição é referente ao cenario
+		int cenario = Character.getNumericValue(sprites.charAt(0));
+		g.drawImage(Entities.CENARIOS[cenario] , 0, 0, Game_Main.WIDTH, Game_Main.HEIGHT, null);
+		
+		//a segunda posição é relacionado a posição do sprite
+		if(sprites.charAt(1) == '-') { //esquerda
 			g.drawImage(Entities.PERSONAGEM, 10, 10, Game_Main.WIDTH -300, Game_Main.HEIGHT, null);
 		}
-		if(sprites.contains("+")) { //direita
+		if(sprites.charAt(1) == '+') { //direita
 			g.drawImage(Entities.PERSONAGEM2 , 300, 10, Game_Main.WIDTH -300, Game_Main.HEIGHT, null);
 		}
-		if(sprites.contains("/")) { //centro
+		if(sprites.charAt(1) == '/') { //centro
 			g.drawImage(Entities.PERSONAGEM2 , 100, 10, Game_Main.WIDTH -300, Game_Main.HEIGHT, null);
 		}
+		
 	}
 
 	public static boolean isPressToContinue() {

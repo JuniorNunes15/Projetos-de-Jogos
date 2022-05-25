@@ -11,6 +11,8 @@ public class Entities {
 	public static BufferedImage INTRO = Game_Main.introSprite.getSprite(0, 0, 960, 640);
 	public static BufferedImage PERSONAGEM = Game_Main.personagem.getSprite(0, 0, 368, 640);
 	public static BufferedImage PERSONAGEM2 = Game_Main.personagem2.getSprite(0, 0, 368, 640);
+	public static BufferedImage[] CENARIOS = {Game_Main.cenario1.getSprite(0, 0, 1300, 865), Game_Main.cenario2.getSprite(0, 0, 639, 361)};
+	public static BufferedImage CENARIO2 = Game_Main.cenario2.getSprite(0, 0, 639, 361);
 	
 
 	protected double x;
