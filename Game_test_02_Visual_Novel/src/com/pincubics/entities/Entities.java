@@ -1,9 +1,7 @@
 package com.pincubics.entities;
 
 import java.awt.Graphics;
-import java.awt.List;
 import java.awt.image.BufferedImage;
-import java.util.Comparator;
 import com.pincubics.main.Game_Main;
 
 public class Entities {
@@ -14,7 +12,6 @@ public class Entities {
 	public static BufferedImage[] CENARIOS = {Game_Main.cenario1.getSprite(0, 0, 1300, 865), Game_Main.cenario2.getSprite(0, 0, 639, 361)};
 	public static BufferedImage CENARIO2 = Game_Main.cenario2.getSprite(0, 0, 639, 361);
 	
-
 	protected double x;
 	protected double y;
 	protected int z;
@@ -22,8 +19,6 @@ public class Entities {
 	protected int height;
 	
 	public int depth;
-	
-	//protected List<Node> path;
 	
 	private BufferedImage sprite;
 	
@@ -43,19 +38,6 @@ public class Entities {
 		this.mWidth = width;
 		this.mHeight = height;
 	}
-	
-	/*public static Comparator<Entity> nodeSorter = new Comparator<Entity>() {	
-		@Override
-		public int compare(Entity n0, Entity n1) {
-			if(n1.depth < n0.depth) {
-				return +1;
-			}
-			if(n1.depth > n0.depth) {
-				return -1;
-			}
-			return 0;
-		}
-	};*/
 	
 	public void setMask(int maskX, int maskY, int mWidth, int mHeight) {
 		this.maskX = maskX;
@@ -95,8 +77,6 @@ public class Entities {
 	
 	public void render(Graphics g) {
 		g.drawImage(sprite, this.getX(), this.getY(), null);
-		//g.setColor(Color.RED);
-		//g.fillRect(this.getX() + maskX - Camera.x, this.getY() + maskY - Camera.y, mWidth, height);
 	}
 	
 }

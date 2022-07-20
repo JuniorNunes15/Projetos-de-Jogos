@@ -15,7 +15,6 @@ public class Tile {
 	}
 	
 	public void render(Graphics g) {
-		//g.drawImage(sprite, x - Camera.x, y - Camera.y, null);
 	}
 
 }

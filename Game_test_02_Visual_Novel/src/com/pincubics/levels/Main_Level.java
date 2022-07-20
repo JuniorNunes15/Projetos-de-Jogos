@@ -67,7 +67,6 @@ public class Main_Level {
 		g.fillRect(0, 0, Game_Main.WIDTH * Game_Main.SCALE, Game_Main.HEIGHT * Game_Main.SCALE);
 		g.setFont(new Font("arial", Font.BOLD, 20));
 		g.setColor(Color.BLUE);
-		g.drawString(Levels[actualLevel], 40, 90);
 		
 		if(actualLevel == 0) {
 			if(talkLine < Level_0.talks.length){
@@ -100,32 +99,21 @@ public class Main_Level {
 				actualLevel++;
 			}
 		}
-		//talkBalon(g, Levels[actualLevel]);
 		if(actualLevel == 3) {
 			actualLevel = 0;
 			Game_Main.setGameState("MENU");
 		}
-		
-		//if(Level_0.InLevel) {
-		//	Level_0.render(g);
-		//}
-		//talkBalon(g, "ha ha, isso é estranho.");
-		//talkBalon(g, "por que estou nesse planeta?");
+		g.setColor(Color.BLACK);
+		g.drawString(Levels[actualLevel], 40, 90);
 	}
 	
 	public static void talkBalon(Graphics g, String talk) {
-		//System.out.println("dentro do balão de fala");
-		//text = talk;
 		setText(talk);
 		g.setColor(Color.WHITE);
 		g.fillRect(20, 450, 920, 170);
 		g.setFont(new Font("arial", Font.BOLD, 20));
 		g.setColor(Color.BLACK);
 		g.drawString(talk, 40, 490);
-		//System.out.println(curIndex);
-		//g.drawString(text.substring(0, curIndex), 40, 510); fala com animação
-		//showMessage = false;
-		//System.out.println(text);
 	}
 	
 	public static void shownSprites(Graphics g, String sprites) { //sprite possi quatro numeros "xxxx" 

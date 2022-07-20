@@ -1,14 +1,9 @@
 package com.pincubics.main;
 
-import java.awt.*;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
-import com.pincubics.entities.Entities;
-import com.pincubics.graphics.Spritesheet;
-
-//import com.sun.tools.javac.launcher.Main;
 
 public class Menu extends Object {
 	
@@ -33,7 +28,7 @@ public class Menu extends Object {
 	private static Game_Main main;
 	
 	public static void tick() {
-		/*
+		/* sistema de save nao implementado
 		File file = new File("save.txt");
 		if(file.exists()) {
 			saveExist = true;
@@ -90,21 +85,13 @@ public class Menu extends Object {
 			}
 		}
 		if(enter) {
-			//Sound.music.loop();
 			enter = false;
 			if(!configuration) {
 				if(options[currentOption] == "Novo jogo" || options[currentOption] == "Continuar") {
 					Game_Main.setGameState("NORMAL");
 					pause = false;
-					//file = new File("save.txt");
-					//file.delete();
 				}
 				else if(options[currentOption] == "Carregar") {
-					/*file = new File("save.txt");
-					if(file.exists()) {
-						String saver = loadGame(10);
-						applySave(saver);
-					}*/
 				}
 				else if(options[currentOption] == "Options") {
 					configuration = true;
@@ -139,7 +126,6 @@ public class Menu extends Object {
 						System.out.println("tela cheia!");
 						Game_Main.currentSize = 1;
 						Game_Main.cz = true;
-						//Game_Main.initFrame();
 					}
 					else {
 						size = false;
@@ -149,18 +135,13 @@ public class Menu extends Object {
 			}
 			
 		}
-		/**/
 	}
-	//public static void applySave(String str) {}
-	//public static String loadGame(int encode) { //load game}
-	//public static void saveGame(String[] val1, int[] val2, int encode) {}
 	public static void render(Graphics g) {
 		
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, Game_Main.WIDTH * Game_Main.SCALE, Game_Main.HEIGHT * Game_Main.SCALE);
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("arial", Font.BOLD, 36));
-		//g.drawImage(Entities.INTRO, 0, 0, Game_Main.WIDTH, Game_Main.HEIGHT, null);
 		if(!configuration) {
 			g.drawString("DIARIO DE UM AVENTUREIRO", (Game_Main.WIDTH * Game_Main.SCALE) / 2 - 280, (Game_Main.HEIGHT * Game_Main.SCALE) / 2 - 150);
 			g.setFont(new Font("arial", Font.BOLD, 30));
