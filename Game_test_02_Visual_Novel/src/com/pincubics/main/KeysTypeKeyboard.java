@@ -9,7 +9,7 @@ import java.awt.event.MouseMotionListener;
 
 public class KeysTypeKeyboard implements Runnable, KeyListener, MouseListener, MouseMotionListener {
 	
-	private Menu menu;
+	//private Menu menu;
 	
 	@Override
 	public void mouseDragged(MouseEvent arg0) {

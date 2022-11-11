@@ -11,8 +11,8 @@ public class Render extends Canvas {
 	
 	private static final long serialVersionUID = 1L;
 	private static Game_Main game;
-    private World world;
-    private Menu menu;
+    //private World world;
+    //private Menu menu;
 	
 	public void render() {
 		BufferStrategy bs = this.getBufferStrategy();
@@ -21,7 +21,7 @@ public class Render extends Canvas {
 			return;
 		}
 		Graphics g = game.getImage().getGraphics();
-		Graphics2D g2 = (Graphics2D) g;
+		//Graphics2D g2 = (Graphics2D) g;
 		World.render(g);
 		
 		

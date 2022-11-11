@@ -1,10 +1,11 @@
 package com.pincubics.world;
 
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
+//import java.awt.image.BufferedImage;
 
 public class Tile {
 	
+	/*
 	private BufferedImage sprite;
 	private int x, y;
 	
@@ -13,7 +14,8 @@ public class Tile {
 		this.y = y;
 		this.sprite = sprite;
 	}
-	
+	*/
+
 	public void render(Graphics g) {
 	}
 

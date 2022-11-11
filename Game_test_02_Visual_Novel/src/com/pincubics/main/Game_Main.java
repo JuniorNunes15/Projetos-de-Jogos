@@ -137,7 +137,7 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 		}
 		Graphics g = getImage().getGraphics();
 		/*renderizacao do jogo*/
-		Graphics2D g2 = (Graphics2D) g;
+		//Graphics2D g2 = (Graphics2D) g;
 		World.render(g);
 
 		g.dispose();
@@ -219,7 +219,7 @@ public class Game_Main extends Canvas implements Runnable, KeyListener, MouseLis
 		return currentSize;
 	}
 	public void setCurrentSize(int currentSize) {
-		this.currentSize = currentSize;
+		Game_Main.currentSize = currentSize;
 	}
 	
 	

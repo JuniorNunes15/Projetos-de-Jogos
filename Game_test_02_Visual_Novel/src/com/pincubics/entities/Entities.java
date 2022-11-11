@@ -22,7 +22,7 @@ public class Entities {
 	
 	private BufferedImage sprite;
 	
-	private int maskX, maskY, mWidth, mHeight;
+	//private int maskX, maskY, mWidth, mHeight;
 	
 	public int maskx = 8, masky = 8, maskw = 10, maskh = 10;
 	
@@ -33,18 +33,22 @@ public class Entities {
 		this.height = height;
 		this.sprite = sprite;
 		
+		/*
 		this.maskX = 0;
 		this.maskY = 0;
 		this.mWidth = width;
 		this.mHeight = height;
+		*/
 	}
 	
+	/* 
 	public void setMask(int maskX, int maskY, int mWidth, int mHeight) {
 		this.maskX = maskX;
 		this.maskY = maskY;
 		this.mWidth = mWidth;
 		this.mHeight = mHeight;
 	}
+	*/
 
 	public int getX() {
 		return (int)x;

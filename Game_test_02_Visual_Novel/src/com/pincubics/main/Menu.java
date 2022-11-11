@@ -25,7 +25,7 @@ public class Menu extends Object {
 	private static boolean configuration = false;
 	private static boolean size = false;
 	
-	private static Game_Main main;
+	//private static Game_Main main;
 	
 	public static void tick() {
 		/* sistema de save nao implementado
