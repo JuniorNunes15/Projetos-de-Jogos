@@ -30,7 +30,7 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
+//import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
 
 import com.pincubics.entities.BulletShot;
 import com.pincubics.entities.Enemy;
@@ -500,7 +500,7 @@ public class Game extends Canvas implements Runnable, KeyListener, MouseListener
 		}
 		if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
 			gameState = "MENU";
-			menu.pause = true;
+			Menu.pause = true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_F) { //salvar o jogo de maneira generica
 			this.saveGame = true;

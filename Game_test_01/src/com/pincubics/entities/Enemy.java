@@ -1,6 +1,6 @@
 package com.pincubics.entities;
 
-import java.awt.Color;
+//import java.awt.Color;
 //import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 import com.pincubics.main.Game;
-import com.pincubics.main.Sound;
+//import com.pincubics.main.Sound;
 import com.pincubics.world.AStar;
 //import com.pincubics.main.Sound;
 import com.pincubics.world.Camera;
@@ -57,7 +57,7 @@ public class Enemy extends Entity {
 		*/
 		
 		/* modo de colidir sem AStar */
-		/*
+		
 		//o inimigo ira atras do jogador quando a disancia entre eles for menor que 70
 		if(this.calculateDistance(this.getX(), this.getY(), Game.player.getX(), Game.player.getY()) < 70) {
 			if(isColiddingWithPlayer() == false) {
@@ -87,7 +87,7 @@ public class Enemy extends Entity {
 		else {
 			
 		}
-		*/
+		
 		
 		/* Metodo de colisao com o AStar */
 		if(!isColiddingWithPlayer()) {
