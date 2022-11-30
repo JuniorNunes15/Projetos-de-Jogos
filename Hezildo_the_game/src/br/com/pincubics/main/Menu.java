@@ -13,7 +13,7 @@ public class Menu {
 	private static boolean pause = false;
 
     public static void tick() {
-
+		
     }
 
     public static void render(Graphics g) {
